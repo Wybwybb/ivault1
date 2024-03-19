@@ -24,14 +24,7 @@
                 <li class="nav-item" v-if="!isAuthenticated">
                     <router-link class="nav-link" to="/signup">Signup</router-link>
                 </li>
-                <!-- Changed "I-Vault" link to "About Us" -->
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/about">About Us</router-link>
-                </li>
                 <!-- Only display "Accounts" and "Logout" links if the user is authenticated -->
-                <li class="nav-item" v-if="isAuthenticated">
-                    <router-link class="nav-link" to="/posts">Accounts</router-link>
-                </li>
                 <li class="nav-item" v-if="isAuthenticated">
                     <a href="#" class="nav-link" @click.prevent="onLogout()">Logout</a>
                 </li>

@@ -3,19 +3,19 @@ import store from './store/store';
 import { IS_USER_AUTHENTICATE_GETTER } from './store/storeconstants';
 
 const Login = () =>
-    import(/* webpackChunkName: "Login" */ './pages/Login.vue');
+    import('./pages/Login.vue');
 const Signup = () => import('./pages/Signup.vue');
 const Home = () => import('./pages/Home.vue');
-const Post = () => import('./pages/Post.vue');
-const AboutUs = () => import(/* webpackChunkName: "AboutUs" */ './pages/AboutUs.vue');
+const LandingPage = () => import('./pages/LandingPage.vue');
+const AboutUs = () => import('./pages/AboutUs.vue');
 
 
 const routes = [
     { path: '', component: Home },
     { path: '/login', component: Login, meta: { auth: false } },
     { path: '/signup', component: Signup, meta: { auth: false } },
-    { path: '/posts', component: Post, meta: { auth: true } },
-    { path: '/about', component: AboutUs, meta: { auth: false } }, // Add the route for About Us
+    { path: '/landingpage', component: LandingPage, meta: { auth: true } },
+    { path: '/about', component: AboutUs, meta: { auth: false } },
 ];
 
 const router = createRouter({
@@ -35,7 +35,7 @@ router.beforeEach((to, from, next) => {
         !to.meta.auth &&
         store.getters[`auth/${IS_USER_AUTHENTICATE_GETTER}`]
     ) {
-        next('/posts');
+        next('/landingpage');
     } else {
         next();
     }
