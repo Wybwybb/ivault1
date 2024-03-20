@@ -5,7 +5,6 @@ import { IS_USER_AUTHENTICATE_GETTER } from './store/storeconstants';
 const Login = () =>
     import('./pages/Login.vue');
 const Signup = () => import('./pages/Signup.vue');
-const Home = () => import('./pages/Home.vue');
 const LandingPage = () => import('./pages/LandingPage.vue');
 const AboutUs = () => import('./pages/AboutUs.vue');
 

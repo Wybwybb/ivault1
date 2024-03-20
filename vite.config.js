@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue'; // Import the vue plugin
+import vue from '@vitejs/plugin-vue'; // Import the Vue plugin
+import autoprefixer from 'autoprefixer'; // Import the autoprefixer plugin
 
 export default defineConfig({
   server: {
@@ -21,19 +22,19 @@ export default defineConfig({
   },
 
   plugins: [
-    vue(), // Use the vue plugin
+    vue(), // Use the Vue plugin
   ],
 
   resolve: {
     alias: {
-      '@': './src', // Remove the leading slash
+      '@': '/src', // Point '@' alias to the root of the project directory
     },
   },
 
   css: {
     postcss: {
       plugins: [
-        require('autoprefixer'),
+        autoprefixer(), // Use autoprefixer plugin
       ],
     },
     modules: true,

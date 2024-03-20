@@ -14,7 +14,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <!-- Only display "Home" link if the user is authenticated -->
                 <li class="nav-item" v-if="isAuthenticated">
                     <router-link class="nav-link" to="/">Home</router-link>
                 </li>
@@ -24,7 +23,6 @@
                 <li class="nav-item" v-if="!isAuthenticated">
                     <router-link class="nav-link" to="/signup">Signup</router-link>
                 </li>
-                <!-- Only display "Accounts" and "Logout" links if the user is authenticated -->
                 <li class="nav-item" v-if="isAuthenticated">
                     <a href="#" class="nav-link" @click.prevent="onLogout()">Logout</a>
                 </li>
